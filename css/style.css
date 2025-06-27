@@ -1,0 +1,434 @@
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light/Dark Mode Variables */
+/* Default: Light Theme (grey tones) */
+:root {
+  --bg: #e5e7eb;
+  --text: #1f2937;
+  --accent: #3b82f6;
+  --nav-bg: #f8fafc;
+  --button-bg: #e0e7ff;
+  --button-text: #1e293b;
+}
+
+/* Dark Theme (purple tones) */
+body.dark {
+  --bg: #2c1a4a; /* dark purple background */
+  --text: #dcd6f7; /* light lavender text */
+  --accent: #9b59b6; /* medium purple accent */
+  --nav-bg: #3d2c68; /* nav background */
+  --button-bg: #6e44ff; /* bright purple button */
+  --button-text: #f0e9ff;
+}
+/* Logo */
+/* Make logo and nav layout solid and non-shifting */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 1rem; /* Add this to space out flex items when wrapping */
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Fira Code", monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  min-width: 180px; /* Reserve space so it doesn't shift */
+}
+
+/* Typing effect that does NOT affect layout */
+.typed-dev {
+  display: inline-block;
+  color: var(--accent);
+  overflow: hidden;
+  border-right: 2px solid var(--accent);
+  white-space: nowrap;
+  width: 4ch; /* Reserve full space up front */
+  animation: typing 2s steps(4) forwards, blink 0.7s step-end infinite;
+}
+
+/* Animation Keyframes */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 4ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+.project-card {
+  border: 1px solid var(--text);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Skills */
+#skills ul {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#skills {
+  padding: 4rem 2rem;
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill {
+  background-color: var(--nav-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+}
+
+.skill i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.skill span {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+input,
+textarea,
+button {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Toggle Button */
+.toggle-mode {
+  cursor: pointer;
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* Contact Form Section */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--nav-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--button-bg);
+  outline: none;
+}
+
+form button {
+  align-self: flex-start;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--accent);
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--nav-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  max-width: 700px;
+  margin: 3rem auto;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.full-width {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-row i {
+  font-size: 1.2rem;
+  color: var(--accent);
+  min-width: 30px;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--button-bg);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent);
+  color: var(--button-text);
+}
+
+.toggle-mode {
+  margin-left: auto;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--button-bg);
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+/* Projects Section */
+#projects {
+  padding: 4rem 2rem;
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: var(--nav-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.project-card p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.project-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.project-links a {
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.project-links a:hover {
+  border-color: var(--accent);
+}
+
+/* Card hover */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tech-stack {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background-color: #ddd;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Optional: Tech-specific colors */
+.badge.html {
+  background-color: #e34c26;
+  color: #fff;
+}
+.badge.css {
+  background-color: #264de4;
+  color: #fff;
+}
+.badge.js {
+  background-color: #f0db4f;
+  color: #000;
+}
+.badge.react {
+  background-color: #61dbfb;
+  color: #000;
+}
+.badge.bootstrap {
+  background-color: #563d7c;
+  color: #fff;
+}
+.badge.git {
+  background-color: #f1502f;
+  color: #fff;
+}

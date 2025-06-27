@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jason's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- 🌐 Navigation -->
+    <nav>
+        <h1 class="logo">
+            <span class="name">Jason</span><span class="typed-dev">.dev</span>
+        </h1>
+
+        <button class="toggle-mode">🌞 Dark Mode</button>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- 👋 Hero Section -->
+    <section id="about">
+        <h2>Hi, I'm Jason</h2>
+        <p>A junior front-end developer learning full-stack technologies.</p>
+        <button>Download Resume</button>
+    </section>
+
+    <!-- 💼 Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <h3>Color Flipper</h3>
+                <p>A simple JS app that changes background color.</p>
+
+                <div class="tech-stack">
+                    <span class="badge html">HTML</span>
+                    <span class="badge css">CSS</span>
+                    <span class="badge js">JavaScript</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>To-Do List</h3>
+                <p>A minimal, responsive to-do list app with local storage.</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Add more cards as needed -->
+
+        </div>
+    </section>
+
+
+    <!-- 🛠 Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+
+            <div class="skill">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML</span>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS</span>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-git-alt"></i>
+                <span>Git</span>
+            </div>
+
+            <div class="skill">
+                <i class="fa-brands fa-bootstrap"></i>
+                <span>Bootstrap</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 📬 Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <div class="form-row">
+                <label for="name"><i class="fa-solid fa-user"></i></label>
+                <input type="text" id="name" placeholder="Your Name" required />
+            </div>
+
+            <div class="form-row">
+                <label for="email"><i class="fa-solid fa-envelope"></i></label>
+                <input type="email" id="email" placeholder="Your Email" required />
+            </div>
+
+            <div class="form-row full-width">
+                <label for="message"><i class="fa-solid fa-comment-dots"></i></label>
+                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        </form>
+        <p>Connect with me:</p>
+        <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
+    </section>
+
+    <!-- 📜 Footer -->
+    <footer>
+        <p>© 2025 Jason — Thanks for visiting!</p>
+    </footer>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
